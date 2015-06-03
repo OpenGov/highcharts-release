@@ -3,8 +3,21 @@
   "description": "Official shim repo for Highcharts releases.",
   "homepage": "http://www.highcharts.com",
   "version": "4.0.3",
-  "repository" : { 
-    "type" : "git",
-    "url" : "https://github.com/highslide-software/highcharts-release"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/highslide-software/highcharts-release"
+  },
+  "browser": "./highcharts.src.js",
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browserify-shim": {
+    "./highcharts.src.js": "Highcharts"
+  },
+  "dependencies": {
+    "browserify": "^10.2.3",
+    "browserify-shim": "^3.8.7"
   }
 }
